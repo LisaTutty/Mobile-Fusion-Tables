@@ -30,11 +30,11 @@ var MapsLib = MapsLib || {}; MapsLib.schemaVersion = 2;
     // See https://developers.google.com/fusiontables/docs/v1/migration_guide for more info
 
     // The encrypted Table ID of your Fusion Table (found under File => About)
-    MapsLib.fusionTableId = "13xmU6wANRJb0Niqcdz5Tr0xWh4AyV0yN10xMxPc";
+    MapsLib.fusionTableId = "15a9CncEM9_2zLP7buPbI052cxynCuOBfq4DWbUsZ&pli";//"Publish Test Collaborative Projects" Fusion Table
 
     // *New Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
     // *Important* this key is for demonstration purposes. please register your own.
-    MapsLib.googleApiKey ="AIzaSyAMVBSXes-6P-gWaxRj20GK8NT6WDVpozM";
+    MapsLib.googleApiKey ="AIzaSyDTlORNgQ0ssBM77hYlrAAl3wLb1SBgglA";//21st Century Geomatics shared API key
     
 
     // DONE!  YOU COULD DELETE EVERYTHING AFTER THIS POINT AND STILL HAVE A WORKING APP.
@@ -59,10 +59,10 @@ $.extend(MapsLib, {
     //
     //  - allColumnsExactMatch (default=false):  allColumns + exact matching of fields.
     //
-    //  - addressShow (default=true):            show address field for centering search
+  //- addressShow (default=true):            show address field for centering search
     //
-    //  - addressAutocomplete:                   autocomplete options for address field (set to false if you don't want autocomplete)
-    //     - country (default="US"):             restrict autocomplete to search within said country (2-character country code)
+  //- addressAutocomplete:                   autocomplete options for address field (set to false if you don't want autocomplete)
+  //- country (default="CA"):             restrict autocomplete to search within said country (2-character country code)
     //     - useDefaultMapBounds (default=true): addresses within defaultMapBounds (see section 4) will be prioritized to the top of autocomplete results
     // 
     //  - distanceFilter: drop-down for restricting search results by distance to address (or nearby).  Comment this out to have no such drop-down.
@@ -75,26 +75,26 @@ $.extend(MapsLib, {
     //       - You can specify "0" for radius length to not filter by distance, and leave zoom as-is.
     //
     //
-    //  - columns: array of search fields.  Each field has a type, and additional attributes that depend on the type:
-    //
-    //      type: "text"
-    //       - label
-    //       - column: name of column
-    //       - exact_match (default=false): look for exact match instead of a contains match
-    //
-    //      type: "datepicker"
-    //       - label
-    //       - column: name of column
-    //       - min (default = earliest date if column is datetime, "" means no min bounds): disable dates before this
-    //       - max (default = latest date if column is datetime, "" means no max bounds): disable dates after this
-    //       - format (default = "mm/dd/yy"): useful if you're using a text column for this
-    //
-    //      type: "slider" (default for numbers and dates, won't work for text columns, pops up datepicker for datetime columns)
-    //       - label
-    //       - column: name of column
-    //       - min (default = min value): override min value
-    //       - max (default = max value): override max value
-    //
+//- columns: array of search fields.  Each field has a type, and additional attributes that depend on the type:
+
+    // type: "text"
+    //   - label
+    //   - column: name of column
+    //  - exact_match (default=false): look for exact match instead of a contains match
+
+    //  type: "datepicker"
+    //   - label
+    //   - column: name of column
+    //   - min (default = earliest date if column is datetime, "" means no min bounds): disable dates before this
+    //   - max (default = latest date if column is datetime, "" means no max bounds): disable dates after this
+    //   - format (default = "mm/dd/yy"): useful if you're using a text column for this
+
+    //  type: "slider" (default for numbers and dates, won't work for text columns, pops up datepicker for datetime columns)
+    //  - label
+    //   - column: name of column
+    //   - min (default = min value): override min value
+    //   - max (default = max value): override max value
+
     //      type: "checkbox"
     //       - label
     //       - is_checked (default = false): start out as checked
@@ -118,13 +118,13 @@ $.extend(MapsLib, {
 
     searchPage: { 
         allColumns: false,
-        distanceFilter: { 
-            entries: [ 
-            ["Anywhere", "0", true], 
-            ["2 blocks", "400 meters"], 
-            ["1/2 mile", ".5 miles"], 
-            ["1 mile"], 
-            ["2 miles"] ]
+        //distanceFilter: { 
+        //    entries: [ 
+        //    ["Anywhere", "0", true], 
+        //    ["2 blocks", "400 meters"], 
+        //    ["1/2 mile", ".5 miles"], 
+        //    ["1 mile"], 
+       //     ["2 miles"] ]
         },
         columns: [ 
             { label: "Rating Filter", type: "dropdown", entries: [
@@ -149,12 +149,12 @@ $.extend(MapsLib, {
 
 /*
     // Title bar (including title of website)
-    title: "SF Restaurant Inspections",
+    title: "Fleming College GIS Collaborative Projects",
 
     // Contents of the About Page.  You can use "{title}" to insert your title.
     aboutPage: " \
         <h3>About {title}</h3> \
-        <p>This is a demonstration of a Mobile Template using Fusion Tables.    Developed by SF Brigade for Code For America, it's an adaptation of Derek Eder's searchable Fusion Table template, licensed under the <a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/License' target='_blank'>MIT License</a>.    This particular application uses health inspection data for businesses in San Francisco.</p> \
+        <p>This is a demonstration of a Mobile Template using Fusion Tables.    Developed by SF Brigade for Code For America, it's an adaptation of Derek Eder's searchable Fusion Table template, licensed under the <a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/License' target='_blank'>MIT License</a>.    This particular application uses project information for GIS Collaborative Projects at Fleming College in Lindsay, Ontario, Canada.</p> \
         <p>To use this template for your own Fusion Table data, <a href='https://github.com/sfbrigade/Mobile-Fusion-Tables' target='_blank'>clone this repository</a> and replace the fields inside fusiontable_settings.js to match your content.</p> \
         ",
 
@@ -162,8 +162,8 @@ $.extend(MapsLib, {
     // you can use them by setting the style and template IDs here.
     // (You can find your IDs inside the link generated by the 'Publish' option in Fusion Tables.)
     // (for more details, see https://developers.google.com/fusiontables/docs/v1/using#WorkingStyles)
-    styleId: 2,
-    templateId: 3,
+    styleId: 3,
+    templateId: 6,
     
     // This will go in your style block.  Useful if customizing your infoboxes.
     customCSS: " \
@@ -248,10 +248,10 @@ $.extend(MapsLib, {
     defaultMapBounds: {
 
         // Use [latitude, longitude] or address
-        center: "San Francisco, CA",
+        center: "Lindsay, ON, Canada",
 
         // "X miles" or "X meters"
-        radius: "6 miles"
+        radius: "100000 meters"
     },
 
     // Set useNearbyLocation to false if you don't want to get the user's location.
@@ -261,10 +261,10 @@ $.extend(MapsLib, {
         // If true: use nearby location only if we're within default map bounds
         //          otherwise, post boundsExceededMessage (if non-empty) and use mapDefaultCenter.
         onlyWithinDefaultMapBounds: true,
-        boundsExceededMessage:      "Your location is far away from San Francisco.    Defaulting to city limits.",
+        boundsExceededMessage:      "Your location is far away from Lindsay, ON, Canada.    Defaulting to city limits.",
 
         // use this zoom radius if starting at nearby location
-        nearbyZoomRadius:           "200 meters",
+        nearbyZoomRadius:           "20000 meters",
 
         // Snap to nearby zoom radius when user hits "Nearby"?    Options are:
         // true              = always snap to zoom level
@@ -284,15 +284,15 @@ $.extend(MapsLib, {
     //            0 = completely invisible
     //            100 = completely opaque
 
-    mapOverlays: [ 
-        "1GBiESlYt_Lc9O5PLuLaii1L74HeY7G4O1fMh9OE", // FusionTable ID of another table
-        { 
-            imageURL: 'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
-            cornerNW: [40.712216, -74.22655],
-            cornerSE: [40.773941, -74.12544],
-            opacityPercent: 60
-        },
-    ],
+    //mapOverlays: [ 
+        //"1GBiESlYt_Lc9O5PLuLaii1L74HeY7G4O1fMh9OE", // FusionTable ID of another table
+        //{ 
+            //imageURL: 'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+            //cornerNW: [40.712216, -74.22655],
+            //cornerSE: [40.773941, -74.12544],
+            //opacityPercent: 60
+        //},
+    //],
 
     // If needed, you can change the visibility of these layers by calling this in script:
     //    MapsLib.setLayerVisibility([array of indices from bottom to top])
