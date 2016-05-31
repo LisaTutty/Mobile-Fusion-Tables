@@ -126,18 +126,33 @@ $.extend(MapsLib, {
         //    ["1 mile"], 
        //     ["2 miles"] ]
         },
+        
+        
+    // type: "text"
+    //   - label
+    //   - column: name of column
+    //  - exact_match (default=false): look for exact match instead of a contains match
+        
         columns: [ 
-            { label: "Rating Filter", type: "dropdown", entries: [
-                ["Any Rating", "'last_score' > 0", true],
-                ["Good", "'last_score' > 90"],
-                ["Adequate", "'last_score' > 85 AND 'last_score' <= 90"],
-                ["Needs Improvement", "'last_score' > 70 AND 'last_score' <= 85"],
-                ["Poor", "'last_score' <= 70 AND 'last_score' > 0"]
-            ] },
-            { label: "Name", type: "text", column: "name"},
-            { label: "Violations", type: "text", column: "violations"},
-            { label: "Score", type: "slider", column: "last_score", min: 0, max: 100},
-            { label: "Last Inspected", type: "datepicker", column: "last_inspection_date"},
+            { label: "Project year", type: "slider", column: "Project Year", min: 1970, max: 2016},
+            { label: "Project name", type: "text", column: "Project Name"},
+            { label: "Project description", type: "text", column: "Project Description"},
+            { label: "Project requirements", type: "text", column: "Project Requirements"},
+            { label: "Skills required", type: "text", column: "Skills Required"},
+            { label: "Deliverables", type: "text", column: "Deliverables"},
+            { label: "Systems", type: "text", column: "Systems"},
+            { label: "Organization name", type: "text", column: "Organization Name"},
+            //{ label: "Rating Filter", type: "dropdown", entries: [
+                //["Any Rating", "'last_score' > 0", true],
+                //["Good", "'last_score' > 90"],
+                //["Adequate", "'last_score' > 85 AND 'last_score' <= 90"],
+                //["Needs Improvement", "'last_score' > 70 AND 'last_score' <= 85"],
+                //["Poor", "'last_score' <= 70 AND 'last_score' > 0"]
+            //] },
+            //{ label: "Name", type: "text", column: "name"},
+            //{ label: "Violations", type: "text", column: "violations"},
+            //{ label: "Score", type: "slider", column: "last_score", min: 0, max: 100},
+            //{ label: "Last Inspected", type: "datepicker", column: "last_inspection_date"},
         ],
     },
 */
